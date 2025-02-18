@@ -48,7 +48,7 @@ merge_3_XeniumObjects <- function(path1, path2, path3,
   return(xenium_merge.obj)
 }
 
-mergeAllXeniumObjects <- function(paths, fov = "fov", output_file = "mypath/xenium_merge.obj.RData") {
+mergeAllXeniumObjects <- function(paths, fov = "fov", output_file = "output_merge/xenium_merge_all.obj.RData") {
   # Number of patients (number of file paths)
   num_patients <- length(paths)
   
