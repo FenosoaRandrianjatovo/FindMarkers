@@ -18,7 +18,7 @@ if (!dir.exists("output_merge")) {
   dir.create("output_merge")
 }
 
-mergeXeniumObjects <- function(path1, path2, path3, 
+merge_3_XeniumObjects <- function(path1, path2, path3, 
                                output_file = "output_merge/xenium_merge.obj.RData", 
                                fov = "fov") {
   # Load Xenium object for Patient 1
