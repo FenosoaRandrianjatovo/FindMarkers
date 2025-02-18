@@ -48,3 +48,38 @@ merge_3_XeniumObjects <- function(path1, path2, path3,
   return(xenium_merge.obj)
 }
 
+mergeAllXeniumObjects <- function(paths, fov = "fov", output_file = "mypath/xenium_merge.obj.RData") {
+  # Number of patients (number of file paths)
+  num_patients <- length(paths)
+  
+  # Initialize a list to store each loaded Xenium object
+  xenium_list <- vector("list", num_patients)
+  
+  # Create unique patient IDs to prefix cell names (e.g., "Patient1", "Patient2", ...)
+  patient_ids <- paste0("Patient", seq_len(num_patients))
+  
+  message("# Loop through each path, load the Xenium object, and remove cells with 0 counts")
+  
+  for (i in seq_along(paths)) {
+    message("Loading data for ", patient_ids[i], " from: ", paths[i])
+    xenium_obj <- LoadXenium(paths[i], fov = fov)
+    
+    message("Removing cells with 0 counts for ", patient_ids[i])
+    xenium_obj <- subset(xenium_obj, subset = nCount_Xenium > 0)
+    
+    # Store the processed object in the list
+    xenium_list[[i]] <- xenium_obj
+  }
+  
+  # Merge all the objects into one large Seurat object
+  message("Merging all Xenium objects...")
+  merged_obj <- merge(xenium_list[[1]], y = xenium_list[-1], add.cell.ids = patient_ids)
+  
+  # Save the merged object to the specified file path
+  message("Saving merged object to: ", output_file)
+  save(merged_obj, file = output_file)
+  
+  return(merged_obj)
+}
+
+
