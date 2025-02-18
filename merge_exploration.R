@@ -50,15 +50,20 @@ ggsave("merge_ImageDimPlot_fov_2.png", plot = plot, width = 20, height = 15, dpi
 
 options(future.globals.maxSize = 1000 * 1024^3)
 
-xenium.obj <- SCTransform(
-  merged_xenium,             # This object containing spatial transcriptomics data
-  assay = "Xenium",        # Specify the assay to normalize and scale (e.g., "Xenium")
-)
+
 
 
 # SCTransform performs normalization and variance stabilization on the data.
 # It replaces the log-normalization step and can help mitigate the effects of technical noise.
 print("==================================================================================")
+
+print("# SCTransform performs normalization and variance stabilization on the data.")
+
+xenium.obj <- SCTransform(
+  merged_xenium,             # This object containing spatial transcriptomics data
+  assay = "Xenium",        # Specify the assay to normalize and scale (e.g., "Xenium")
+)
+
 print("# Perform Principal Component Analysis (PCA) on the normalized data")
 xenium.obj <- RunPCA(
   xenium.obj,             
