@@ -21,6 +21,10 @@ if (!dir.exists("output_merge")) {
 merge_3_XeniumObjects <- function(path1, path2, path3, 
                                output_file = "output_merge/xenium_merge.obj.RData", 
                                fov = "fov") {
+  # Record overall start time
+  overall_start <- Sys.time()
+  message("Process started at: ", overall_start)
+
   # Load Xenium object for Patient 1
   xenium.obj1 <- LoadXenium(path1, fov = fov)
   message("# Removing cells with 0 counts from xenium.obj1")
@@ -35,6 +39,10 @@ merge_3_XeniumObjects <- function(path1, path2, path3,
   xenium.obj3 <- LoadXenium(path3, fov = fov)
   message("# Removing cells with 0 counts from xenium.obj3")
   xenium.obj3 <- subset(xenium.obj3, subset = nCount_Xenium > 0)
+
+   # Merge all the objects into one large Seurat object
+  message("Merging all Xenium objects...")
+  merge_start <- Sys.time()
   
   # Merge the three objects
   xenium_merge.obj <- merge(xenium.obj1, 
@@ -42,13 +50,27 @@ merge_3_XeniumObjects <- function(path1, path2, path3,
                             add.cell.ids = c("Patient1", "Patient2", "Patient3"))
   
   message("# Save the merged object to file")
+
+  merge_end <- Sys.time()
+  merge_duration <- merge_end - merge_start
+  message("Merging completed in: ", round(as.numeric(merge_duration, units = "secs"), 2), " seconds")
+  
   save(xenium_merge.obj, file = output_file)
+
+  overall_end <- Sys.time()
+
+  total_duration <- overall_end - overall_start
+
+  message("Total process completed in: ", round(as.numeric(total_duration, units = "secs"), 2), " seconds")
   
   # Return the merged object
   return(xenium_merge.obj)
 }
 
 mergeAllXeniumObjects <- function(paths, fov = "fov", output_file = "output_merge/xenium_merge_all.obj.RData") {
+
+  # Record overall start time
+  overall_start <- Sys.time()
   # Number of patients (number of file paths)
   num_patients <- length(paths)
   
@@ -78,6 +100,12 @@ mergeAllXeniumObjects <- function(paths, fov = "fov", output_file = "output_merg
   # Save the merged object to the specified file path
   message("Saving merged object to: ", output_file)
   save(merged_obj, file = output_file)
+  
+  overall_end <- Sys.time()
+
+  total_duration <- overall_end - overall_start
+
+  message("Total process completed in: ", round(as.numeric(total_duration, units = "secs"), 2), " seconds")
   
   return(merged_obj)
 }
