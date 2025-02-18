@@ -1,3 +1,4 @@
+# Source for this code: https://satijalab.org/seurat/archive/v4.3/merge
 library(Seurat)
 library(future)
 library(ggplot2)
@@ -10,7 +11,7 @@ plan("multisession", workers = 25)
 
 setwd("/scratch/fenosoa/Maya_Project/merge_data")
 
-path1 <- "/home/fenosoa/scratch/Maya_Project/data/output-XETG00325__0029986__Region_1__20241108__233229 "
+path1 <- "/home/fenosoa/scratch/Maya_Project/data/output-XETG00325__0029986__Region_1__20241108__233229"
 path2 <-  "/home/fenosoa/scratch/Maya_Project/data/output-XETG00325__0029986__Region_2__20241108__233230"
 path3 <-"/home/fenosoa/scratch/Maya_Project/data/output-XETG00325__0029986__Region_3__20241108__233230"
 
@@ -69,6 +70,10 @@ merge_3_XeniumObjects <- function(path1, path2, path3,
   return(xenium_merge.obj)
 }
 
+# merged_xenium <- merge_3_XeniumObjects(path1, path2, path3, 
+#                                     output_file = "output_merge/xenium_merge.obj.RData", 
+#                                     fov = "fov")
+
 mergeAllXeniumObjects <- function(paths, fov = "fov", output_file = "output_merge/xenium_merge_all.obj.RData") {
 
   # Record overall start time
@@ -111,5 +116,20 @@ mergeAllXeniumObjects <- function(paths, fov = "fov", output_file = "output_merg
   
   return(merged_obj)
 }
+
+
+# # Example: paths vector containing 300 file paths
+# paths <- c("path/to/patient1/data",
+#            "path/to/patient2/data",
+#            # ...
+#            "path/to/patient300/data")
+
+# # Merge all Xenium objects and save the result
+# merged_xenium <- mergeXeniumObjects(paths, fov = "fov", 
+#                                     output_file = "mypath/xenium_merge.obj.RData")
+
+
+
+
 
 
