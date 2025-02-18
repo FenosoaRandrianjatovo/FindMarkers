@@ -49,11 +49,13 @@ merge_3_XeniumObjects <- function(path1, path2, path3,
                             y = list(xenium.obj2, xenium.obj3), 
                             add.cell.ids = c("Patient1", "Patient2", "Patient3"))
   
-  message("# Save the merged object to file")
+  
 
   merge_end <- Sys.time()
   merge_duration <- merge_end - merge_start
   message("Merging completed in: ", round(as.numeric(merge_duration, units = "secs"), 2), " seconds")
+
+  message("# Save the merged object to file")
   
   save(xenium_merge.obj, file = output_file)
 
