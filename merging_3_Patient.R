@@ -129,6 +129,20 @@ mergeAllXeniumObjects <- function(paths, fov = "fov", output_file = "output_merg
 #                                     output_file = "mypath/xenium_merge.obj.RData")
 
 
+# > dim(LayerData(merged_xenium))
+# Warning: data layer is not found and counts layer is used
+# [1]   5001 153315
+# Warning message:
+# In LayerData.Assay5(object = object[[assay]], layer = layer, ...) :
+#   multiple layers are identified by counts.1 counts.2 counts.3
+#  only the first layer is used
+# > dim(merged_xenium@assays$Xenium["counts.1"])
+# [1]   5001 153315
+# > dim(merged_xenium@assays$Xenium["counts.2"])
+# [1]   5001 146573
+# > dim(merged_xenium@assays$Xenium["counts.3"])
+# [1]   5001 204093
+
 
 
 
