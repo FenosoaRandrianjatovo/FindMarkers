@@ -3,7 +3,7 @@
 #SBATCH --account=def-salehlab-ab
 #SBATCH --nodes=1
 #SBATCH --output=Log_Output.out
-#SBATCH --mem=200000M
+#SBATCH --mem=600G
 #SBATCH --cpus-per-task=30
 #SBATCH --mail-user=fenosoa.randrianjatovo@aims.ac.rw
 #SBATCH --mail-type=ALL
