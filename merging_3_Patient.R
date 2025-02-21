@@ -20,7 +20,7 @@ if (!dir.exists("output_merge")) {
 }
 
 merge_3_XeniumObjects <- function(path1, path2, path3, 
-                               output_file = "output_merge/xenium_merge.obj.RData", 
+                               output_file = "output_merge/xenium_merge.obj_merge.data_T.RData", 
                                fov = "fov") {
   # Record overall start time
   overall_start <- Sys.time()
@@ -47,8 +47,10 @@ merge_3_XeniumObjects <- function(path1, path2, path3,
   
   # Merge the three objects
   xenium_merge.obj <- merge(xenium.obj1, 
-                            y = list(xenium.obj2, xenium.obj3), 
-                            add.cell.ids = c("Patient1", "Patient2", "Patient3"))
+                            y = c(xenium.obj2, xenium.obj3), 
+                            add.cell.ids = c("Patient1", "Patient2", "Patient3"), 
+                            project = "XeniumMergeObject",
+                            merge.data = TRUE)
   
   
 
