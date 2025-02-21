@@ -20,6 +20,6 @@ module spider udunits
 module load  gcc/12.3  r/4.4.0
 
 
-Rscript exploration_R2.R
+Rscript merging_3_Patient.R
 
 echo "Job finished"
