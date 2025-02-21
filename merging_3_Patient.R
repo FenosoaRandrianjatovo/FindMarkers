@@ -31,7 +31,7 @@ merge_3_XeniumObjects <- function(path1, path2, path3,
   xenium.obj1 <- LoadXenium(path1, fov = fov)
   message("# Removing cells with 0 counts from xenium.obj1")
   xenium.obj1 <- subset(xenium.obj1, subset = nCount_Xenium > 0)
-  # Normalize and scale the data using SCTransform
+  message("# Normalize and scale the data using SCTransform")
   xenium.obj1 <- SCTransform(
     xenium.obj1,             # This object containing spatial transcriptomics data
     assay = "Xenium",        # Specify the assay to normalize and scale (e.g., "Xenium")
@@ -41,7 +41,7 @@ merge_3_XeniumObjects <- function(path1, path2, path3,
   xenium.obj2 <- LoadXenium(path2, fov = fov)
   message("# Removing cells with 0 counts from xenium.obj2")
   xenium.obj2 <- subset(xenium.obj2, subset = nCount_Xenium > 0)
-   message("# Normalize and scale the data using SCTransform")
+  message("# Normalize and scale the data using SCTransform")
   xenium.obj2 <- SCTransform(
     xenium.obj2,             # This object containing spatial transcriptomics data
     assay = "Xenium",        # Specify the assay to normalize and scale (e.g., "Xenium")
