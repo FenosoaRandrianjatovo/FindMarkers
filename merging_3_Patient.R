@@ -18,6 +18,7 @@ path3 <-"/home/fenosoa/scratch/Maya_Project/data/output-XETG00325__0029986__Regi
 if (!dir.exists("output_merge")) {
   dir.create("output_merge")
 }
+options(future.globals.maxSize = 520 * 1024^3)
 
 merge_3_XeniumObjects <- function(path1, path2, path3, 
                                output_file = "output_merge/xenium_merge.obj_merge.data_T.RData", 
@@ -30,16 +31,31 @@ merge_3_XeniumObjects <- function(path1, path2, path3,
   xenium.obj1 <- LoadXenium(path1, fov = fov)
   message("# Removing cells with 0 counts from xenium.obj1")
   xenium.obj1 <- subset(xenium.obj1, subset = nCount_Xenium > 0)
+  # Normalize and scale the data using SCTransform
+  xenium.obj1 <- SCTransform(
+    xenium.obj1,             # This object containing spatial transcriptomics data
+    assay = "Xenium",        # Specify the assay to normalize and scale (e.g., "Xenium")
+  )
   
   # Load Xenium object for Patient 2
   xenium.obj2 <- LoadXenium(path2, fov = fov)
   message("# Removing cells with 0 counts from xenium.obj2")
   xenium.obj2 <- subset(xenium.obj2, subset = nCount_Xenium > 0)
+   message("# Normalize and scale the data using SCTransform")
+  xenium.obj2 <- SCTransform(
+    xenium.obj2,             # This object containing spatial transcriptomics data
+    assay = "Xenium",        # Specify the assay to normalize and scale (e.g., "Xenium")
+  )
   
-  # Load Xenium object for Patient 3
+  message("# Load Xenium object for Patient 3")
   xenium.obj3 <- LoadXenium(path3, fov = fov)
   message("# Removing cells with 0 counts from xenium.obj3")
   xenium.obj3 <- subset(xenium.obj3, subset = nCount_Xenium > 0)
+  message("# Normalize and scale the data using SCTransform")
+  xenium.obj3 <- SCTransform(
+    xenium.obj3,             # This object containing spatial transcriptomics data
+    assay = "Xenium",        # Specify the assay to normalize and scale (e.g., "Xenium")
+  )
 
    # Merge all the objects into one large Seurat object
   message("Merging all Xenium objects...")
