@@ -1,5 +1,6 @@
 # Link : https://github.com/satijalab/seurat/issues/6054
 library(Seurat)
+library(Matrix)
 library(future)
 library(ggplot2)
 library(arrow)
@@ -53,6 +54,16 @@ options(future.globals.maxSize = 1000 * 1024^3)
 
 
 
+# Convert each count layer to a sparse matrix (if not already)
+counts1 <- as(merged_xenium@assays$Xenium@layers$counts.1, "dgCMatrix")
+counts2 <- as(merged_xenium@assays$Xenium@layers$counts.2, "dgCMatrix")
+counts3 <- as(merged_xenium@assays$Xenium@layers$counts.3, "dgCMatrix")
+
+# Combine them column-wise
+merged_counts <- cbind(counts1, counts2, counts3)
+
+# Expected: 5001 x 503981
+print(dim(merged_counts))
 
 # SCTransform performs normalization and variance stabilization on the data.
 # It replaces the log-normalization step and can help mitigate the effects of technical noise.
