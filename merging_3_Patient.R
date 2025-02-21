@@ -76,9 +76,9 @@ merge_3_XeniumObjects <- function(path1, path2, path3,
 #                                     output_file = "output_merge/xenium_merge.obj.RData", 
 #                                     fov = "fov")
 
-# merged_xenium <- merge_3_XeniumObjects(path1, path2, path3, 
-#                                     output_file = "output_merge/xenium_merge.obj_merge.data_T.RData", 
-#                                     fov = "fov")
+merged_xenium <- merge_3_XeniumObjects(path1, path2, path3, 
+                                    output_file = "output_merge/xenium_merge.obj_merge.data_T.RData", 
+                                    fov = "fov")
 
 mergeAllXeniumObjects <- function(paths, fov = "fov", output_file = "output_merge/xenium_merge_all.obj.RData") {
 
