@@ -35,6 +35,8 @@ xenium.obj@assays$Xenium@layers <- list("counts.1" = merged_counts)
 
 print(dim(xenium.obj@assays$Xenium@layers$counts.1)) # Expected: 5001 x 503981
 
+DefaultAssay(xenium.obj) <- "SCT"
+
 # Normalize and scale the data using SCTransform
 xenium.obj_test <- SCTransform(
   xenium.obj,             # This object containing spatial transcriptomics data
