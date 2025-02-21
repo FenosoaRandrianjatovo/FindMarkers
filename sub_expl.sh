@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --time=0-3:00:00
+#SBATCH --time=0-10:00:00
 #SBATCH --account=def-salehlab-ab
 #SBATCH --nodes=1
 #SBATCH --output=Log_Output.out
