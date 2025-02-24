@@ -8,9 +8,12 @@ library(RColorBrewer)
 library(patchwork)
 plan("multisession", workers = 25)
 
+#Set working Directory
+setwd("/home/fenosoa/scratch/Maya_Project/merge_data")
+options(future.globals.maxSize = 480 * 1024^3)  # Set the limit to 480 GB
+
 # To Load te file for another downstreaming task
-detwd("/home/fenosoa/scratch/Maya_Project/merge_data")
-path <- "/home/fenosoa/scratch/Maya_Project/merge_data/output_merge/xenium_merge.obj_merge.data_T.RData"
+path <- "/output_merge/xenium_merge.obj_merge.data_T.RData"
 temp_env <- new.env()
 print("xenium.obj :   Loading begin")
 load(path, envir = temp_env)
@@ -60,4 +63,18 @@ xenium.obj <- FindClusters(
 
 # After running this workflow, the Seurat object will have normalized data, dimensionality-reduced representations (PCA, UMAP),
 UMAP_xenium_merge.obj <- xenium.obj
-save(UMAP_xenium_merge.obj, file = "/home/fenosoa/scratch/Maya_Project/pipeline_Region/out3/UMAP_xenium_merge.obj.RData")
+print("SAVE UMAP_xenium_merge.obj to UMAP_xenium_merge.obj.RData")
+save(UMAP_xenium_merge.obj, file = "/output_merge/UMAP_xenium_merge.obj.RData")
+print("==================================================================================")
+
+
+
+
+
+
+
+
+
+
+
+
