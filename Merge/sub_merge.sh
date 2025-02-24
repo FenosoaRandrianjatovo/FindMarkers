@@ -8,7 +8,7 @@
 #SBATCH --mail-user=fenosoa.randrianjatovo@aims.ac.rw
 #SBATCH --mail-type=ALL
 
-echo "Job started ..., Let's do it!!!"
+echo "Job started.  Let's do it ....... "
 
 module load StdEnv/2023
 module spider arrow/18.1.0
