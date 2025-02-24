@@ -30,6 +30,26 @@ print("=========================================================================
 plot4 <- DimPlot(xenium.obj)
 ggsave("UMAP_merge_Plot.png", plot = plot4, width = 20, height = 15, dpi = 300)
 
+if (!dir.exists("ident")) {
+  dir.create("ident")
+}
+
+# Loop through ident values from 0 to 15 
+print("Begin to save ImageDimPlot for each ident")
+for (ident in 0:(n-1)) {
+  # Generate the plot
+  p <- ImageDimPlot(xenium.obj, fov = "fov", cols = "red", 
+                    cells = WhichCells(xenium.obj, idents = ident))
+  
+  # Define the filename dynamically
+  filename <- paste0("ident/ImageDimPlot_for_ident", ident, ".png")
+  
+
+  ggsave(filename, plot = p, width = 30, height = 20, dpi = 300)
+  print(paste("Saved plot:", filename))
+}
+
+
 
 
 
