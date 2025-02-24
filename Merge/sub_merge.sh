@@ -3,7 +3,7 @@
 #SBATCH --account=def-salehlab-ab
 #SBATCH --nodes=1
 #SBATCH --output=Log_UMAP-Merge.out
-#SBATCH --mem=600G
+#SBATCH --mem=200G
 #SBATCH --cpus-per-task=30
 #SBATCH --mail-user=fenosoa.randrianjatovo@aims.ac.rw
 #SBATCH --mail-type=ALL
