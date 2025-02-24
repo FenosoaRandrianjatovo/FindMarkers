@@ -1,0 +1,267 @@
+Job started.  Let's do it ....... 
+
+----------------------------------------------------------------------------
+  arrow: arrow/18.1.0
+----------------------------------------------------------------------------
+    Description:
+      Apache Arrow is a cross-language development platform for in-memory
+      data.
+
+    Properties:
+      Tools for development / Outils de développement
+
+    You will need to load all module(s) on any one of the lines below before the "arrow/18.1.0" module is available to load.
+
+      StdEnv/2023
+      StdEnv/2023  cudacore/.12.2.2
+ 
+    This module provides the following extensions:
+
+       pyarrow/18.1.0 (E)
+
+    Help:
+      Description
+      ===========
+      Apache Arrow is a cross-language development platform for in-memory data.
+      
+      
+      More information
+      ================
+       - Homepage: https://arrow.apache.org
+      
+      
+      Compatible modules
+      ==================
+      This module is compatible with the following modules, one of each line is required:
+      * python/3.12, python/3.11, python/3.10
+      
+
+
+ 
+
+
+----------------------------------------------------------------------------
+  gdal:
+----------------------------------------------------------------------------
+    Description:
+      GDAL is a translator library for raster geospatial data formats that
+      is released under an X/MIT style Open Source license by the Open
+      Source Geospatial Foundation. As a library, it presents a single
+      abstract data model to the calling application for all supported
+      formats. It also comes with a variety of useful commandline utilities
+      for data translation and processing.
+
+     Versions:
+        gdal/3.0.4
+        gdal/3.2.3
+        gdal/3.4.1
+        gdal/3.4.3
+        gdal/3.5.1
+        gdal/3.7.2
+        gdal/3.9.1
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "gdal" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider gdal/3.9.1
+----------------------------------------------------------------------------
+
+ 
+
+
+----------------------------------------------------------------------------
+  proj:
+----------------------------------------------------------------------------
+    Description:
+      Program proj is a standard Unix filter function which converts
+      geographic longitude and latitude coordinates into cartesian
+      coordinates
+
+     Versions:
+        proj/4.9.3
+        proj/6.3.2
+        proj/7.0.0
+        proj/7.0.1
+        proj/7.2.1
+        proj/8.0.0
+        proj/9.0.0
+        proj/9.0.1
+        proj/9.2.0
+        proj/9.4.1
+     Other possible modules matches:
+        libgeotiff-proj901  librttopo-proj9  libspatialite-proj9  libspatialite-proj901  proj4-fortran
+
+----------------------------------------------------------------------------
+  To find other possible module matches execute:
+
+      $ module -r spider '.*proj.*'
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "proj" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider proj/9.4.1
+----------------------------------------------------------------------------
+
+ 
+
+
+----------------------------------------------------------------------------
+  geos:
+----------------------------------------------------------------------------
+    Description:
+      GEOS (Geometry Engine - Open Source) is a C++ port of the Java
+      Topology Suite (JTS)
+
+     Versions:
+        geos/3.7.3
+        geos/3.8.1
+        geos/3.9.1
+        geos/3.10.2
+        geos/3.12.0
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "geos" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider geos/3.12.0
+----------------------------------------------------------------------------
+
+ 
+
+
+----------------------------------------------------------------------------
+  udunits:
+----------------------------------------------------------------------------
+    Description:
+      UDUNITS supports conversion of unit specifications between formatted
+      and binary forms, arithmetic manipulation of units, and conversion of
+      values between compatible scales of measurement.
+
+     Versions:
+        udunits/2.2.26
+        udunits/2.2.28
+
+----------------------------------------------------------------------------
+  For detailed information about a specific "udunits" package (including how to load the modules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+     $ module spider udunits/2.2.28
+----------------------------------------------------------------------------
+
+ 
+
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘arrow’
+
+The following object is masked from ‘package:utils’:
+
+    timestamp
+
+
+Attaching package: ‘glmGamPoi’
+
+The following object is masked from ‘package:ggplot2’:
+
+    vars
+
+[1] "# To Load te file by creating a new enverimont"
+[1] "xenium.obj :   Loading begin"
+[1] "# Make sure the SCT assay is set as the default"
+[1] "=================================================================================="
+[1] "# Perform Principal Component Analysis (PCA) on the normalized data"
+PC_ 1 
+Positive:  COL4A1, PLVAP, HSPG2, ENG, COL4A2, NOTCH4, MCAM, ADAMTS1, CD34, PECAM1 
+	   STAB1, SHANK3, THY1, PODXL, CDH5, CLDN5, THBS1, TCF4, NOTCH3, TINAGL1 
+	   PDGFRB, KDR, EPAS1, CALCRL, EMP1, EDNRB, ADAMTS4, ROBO4, EGFL7, FLT4 
+Negative:  APOB, PLG, MAT1A, CFB, DHCR24, SERPINA3, CPS1, C4B, CES1, EPHX1 
+	   SLC2A2, TFR2, LRG1, SLC22A1, ITIH1, P4HB, EBP, C4A, POR, CYP27A1 
+	   ERRFI1, FBP1, SOD1, SERPIND1, IGFBP1, SERPINC1, F2, CPB2, CP, CYP3A5 
+PC_ 2 
+Positive:  PLVAP, COL4A1, HSPG2, NOTCH4, SHANK3, CD34, ENG, PODXL, MCAM, COL4A2 
+	   CDH5, CLDN5, EPAS1, INHBB, KDR, PECAM1, CALCRL, FZD4, ROBO4, SERPINA3 
+	   APP, NOS3, FLT4, MMRN2, DLL4, TIE1, CLEC14A, MAT1A, APOB, CFB 
+Negative:  STAB1, CD163, LGMN, MSR1, CXCR4, CSF1R, CD4, SIGLEC1, ITGB2, PLTP 
+	   THEMIS2, F13A1, ITGAX, CYBA, CIITA, MRC1, VSIG4, FCGR2A, FCGBP, CD68 
+	   SLCO2B1, FMN1, GRN, IL10RA, TBXAS1, C5AR1, LILRB5, ARRB2, FOLR2, PLAUR 
+PC_ 3 
+Positive:  PLVAP, NOTCH4, SHANK3, STAB1, CD34, HSPG2, PECAM1, ENG, PODXL, CDH5 
+	   EGFL7, KDR, CCL14, FLT4, ROBO4, CLDN5, INHBB, NOS3, MMRN2, DLL4 
+	   TIE1, CLEC14A, CALCRL, ENPP2, SOX18, PDE2A, TGFBR2, GIMAP5, FZD4, LGMN 
+Negative:  COL4A1, PDGFRB, NOTCH3, CCN2, COL5A1, ADAMTS1, THBS2, AEBP1, THY1, COL4A2 
+	   SERPINE1, MCAM, COL5A2, ADAMTS4, LTBP2, THBS1, CCN1, CSPG4, TBX2, FSTL1 
+	   ADAMTS2, STEAP4, MFGE8, H19, ADGRA2, ADAMTS12, PLA2G5, SYNPO2, ADGRE5, SLIT3 
+PC_ 4 
+Positive:  COL4A1, MCAM, STAB1, NOTCH3, PDGFRB, ADAMTS4, THY1, CSPG4, COL4A2, H19 
+	   CD163, CD14, LGMN, SLCO2B1, MSR1, SIGLEC1, TBX2, CSF1R, SERPINA3, CFB 
+	   PLVAP, FCGBP, FBP1, PLTP, APOB, PLA2G5, PLG, RGS5, C4B, SLC22A1 
+Negative:  CCN2, AEBP1, SERPINE1, THBS2, ADGRE5, THBS1, LTBP2, CD3E, CCN1, CCDC80 
+	   CLDN5, NDRG1, COL5A1, EMP1, LRRC32, ENG, CCL14, PKM, MRC2, LTBP1 
+	   TMEM173, MYH10, SEMA4D, CXCR4, NR4A1, PLAT, ITGAL, ITGB4, ANXA2, CD44 
+PC_ 5 
+Positive:  ADAMTS1, CLDN5, NOTCH3, MCAM, ADAMTS4, PDGFRB, CSPG4, TBX2, RGS5, PLA2G5 
+	   TINAGL1, CBLN1, JAG1, ENPP2, ITGB4, SCN4B, NOS3, NR4A1, MMRN2, MYH9 
+	   FAM107A, MFGE8, CD3E, MAP1B, ICAM2, STEAP4, CACNA1H, SOX18, ENPEP, VEGFC 
+Negative:  COL4A1, THBS2, THBS1, CCN2, PLVAP, SERPINE1, COL5A1, AEBP1, LTBP2, CCN1 
+	   STAB1, COL4A2, HSPG2, ENG, CCDC80, MRC2, LOXL2, MEG3, FSTL1, CXCL12 
+	   ADAMTS2, SERPINA3, ADM, CD14, CFB, SLCO2B1, CD163, LGMN, CDH13, GABRD 
+Warning message:
+In PrepDR(object = object, features = features, verbose = verbose) :
+  The following 2395 features requested have not been scaled (running reduction without them): A2ML1, AAR2, ABCA3, ABCA4, ABCC12, ABCC4, ABCC8, ABHD11, ABI3BP, ABO, ABTB1, ACAP1, ACHE, ACOD1, ACPP, ACRBP, ACRV1, ACTBL2, ACTL7A, ACTN2, ADAM12, ADAM28, ADAM33, ADAMDEC1, ADAMTS19, ADAMTS5, ADCY2, ADCYAP1, ADCYAP1R1, ADGRA1, ADGRB1, ADGRB2, ADGRD2, ADGRE1, ADGRG5, ADGRL1, ADIPOQ, ADORA1, ADORA2A, ADORA2B, ADORA3, ADRA1D, ADRA2A, ADRA2C, ADRB1, ADRB3, ADTRP, AFF2, AFG1L, AGER, AGR3, AGRP, AGTR2, AHRR, AICDA, AIF1L, AIM2, AIRE, AJAP1, AKAP4, ALG6, ALG9, ALK, ALOX12, ALOX15, ALPK1, ALX1, AMH, AMIGO1, AMIGO3, AMOT, ANGPT1, ANGPT2, ANGPTL7, ANK1, ANKK1, ANKRD13D, ANKRD30A, ANKRD6, ANKS6, ANO3, ANXA10, ANXA3, ANXA8, AP1S3, AP3B2, AP3M2, APAF1, APC, APCDD1, APELA, APLF, APLN, APOBEC3B, APOBEC3C, APOBEC3D, APOBEC3F, APOBEC3G, AQP4, AQP5, AQP8, ARC, ARG2, ARHGAP36, ARID3B, ARL4D, ARMC5, ARMC7, ARNTL, ARR3, ART1, ART3, ART4, ARX, ASCL1, ASCL2, ASF1B, ASIC1, ASPM, ASPN, ASTN2, ATF3, ATG10, ATG5, ATL1,  [... truncated]
+[1] "=================================================================================="
+[1] "# Compute a UMAP (Uniform Manifold Approximation and Projection) for visualization"
+Warning: The default method for RunUMAP has changed from calling Python UMAP via reticulate to the R-native UWOT using the cosine metric
+To use Python UMAP via reticulate, set umap.method to 'umap-learn' and metric to 'correlation'
+This message will be shown once per session
+08:50:20 UMAP embedding parameters a = 0.9922 b = 1.112
+08:50:20 Read 503981 rows and found 30 numeric columns
+08:50:20 Using Annoy for neighbor search, n_neighbors = 30
+08:50:20 Building Annoy index with metric = cosine, n_trees = 50
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+08:51:38 Writing NN index file to temp file /tmp/Rtmp68CxMs/file1e9cb82aec6a49
+08:51:38 Searching Annoy index using 25 threads, search_k = 3000
+08:51:52 Annoy recall = 100%
+08:51:54 Commencing smooth kNN distance calibration using 25 threads with target n_neighbors = 30
+08:52:11 Initializing from normalized Laplacian + noise (using RSpectra)
+08:53:07 Commencing optimization for 200 epochs, with 23862918 positive edges
+08:53:07 Using rng type: pcg
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+08:59:05 Optimization finished
+[1] "=================================================================================="
+[1] "# Identify cell neighbors based on the PCA-reduced dimensions"
+Computing nearest neighbor graph
+Computing SNN
+[1] "=================================================================================="
+[1] "# Cluster the cells using the SNN graph"
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 503981
+Number of edges: 14563736
+
+Running Louvain algorithm...
+Maximum modularity in 10 random starts: 0.9433
+Number of communities: 26
+Elapsed time: 508 seconds
+14 singletons identified. 12 final clusters.
+Warning message:
+UNRELIABLE VALUE: One of the ‘future.apply’ iterations (‘future_lapply-1’) unexpectedly generated random numbers without declaring so. There is a risk that those random numbers are not statistically sound and the overall results might be invalid. To fix this, specify 'future.seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced via the L'Ecuyer-CMRG method. To disable this check, use 'future.seed = NULL', or set option 'future.rng.onMisuse' to "ignore". 
+[1] "SAVE UMAP_xenium_merge.obj to UMAP_xenium_merge.obj.RData"
