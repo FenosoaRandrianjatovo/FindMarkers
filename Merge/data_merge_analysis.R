@@ -66,7 +66,7 @@ xenium.obj <- FindClusters(
 # After running this workflow, the Seurat object will have normalized data, dimensionality-reduced representations (PCA, UMAP),
 UMAP_xenium_merge.obj <- xenium.obj
 print("SAVE UMAP_xenium_merge.obj to UMAP_xenium_merge.obj.RData")
-save(UMAP_xenium_merge.obj, file = "/output_merge/UMAP_xenium_merge.obj.RData")
+save(UMAP_xenium_merge.obj, file = "UMAP_xenium_merge.obj.RData")
 
 print("==================================================================================")
 
