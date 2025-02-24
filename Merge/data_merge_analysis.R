@@ -13,7 +13,9 @@ setwd("/home/fenosoa/scratch/Maya_Project/merge_data")
 options(future.globals.maxSize = 480 * 1024^3)  # Set the limit to 480 GB
 
 print("# To Load te file by creating a new enverimont")
-path <- "/output_merge/xenium_merge.obj_merge.data_T.RData"
+
+# The Full Path
+path <- normalizePath("/home/fenosoa/scratch/Maya_Project/merge_data/output_merge/xenium_merge.obj_merge.data_T.RData")
 temp_env <- new.env()
 print("xenium.obj :   Loading begin")
 load(path, envir = temp_env)
