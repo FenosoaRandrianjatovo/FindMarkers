@@ -288,3 +288,7 @@ A dimensional reduction object with key umap_
  Jackstraw run: FALSE 
  Computed using assay: SCT 
 
+marker.0 <- FindMarkers(xenium.obj, ident.1 = "0")
+Error in FindMarkers.SCTAssay(object = data.use, latent.vars = latent.vars,  : 
+  Object contains multiple models with unequal library sizes. Run `PrepSCTFindMarkers()` before running `FindMarkers()`.
+
