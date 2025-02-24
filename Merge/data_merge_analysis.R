@@ -12,7 +12,7 @@ plan("multisession", workers = 25)
 setwd("/home/fenosoa/scratch/Maya_Project/merge_data")
 options(future.globals.maxSize = 480 * 1024^3)  # Set the limit to 480 GB
 
-# To Load te file by creating a new enverimont
+print("# To Load te file by creating a new enverimont")
 path <- "/output_merge/xenium_merge.obj_merge.data_T.RData"
 temp_env <- new.env()
 print("xenium.obj :   Loading begin")
