@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --time=0-10:00:00
+#SBATCH --time=0-5:00:00
 #SBATCH --account=def-salehlab-ab
 #SBATCH --nodes=1
-#SBATCH --output=Log_Output.out
+#SBATCH --output=Log_UMAP-Merge.out
 #SBATCH --mem=600G
 #SBATCH --cpus-per-task=30
 #SBATCH --mail-user=fenosoa.randrianjatovo@aims.ac.rw
