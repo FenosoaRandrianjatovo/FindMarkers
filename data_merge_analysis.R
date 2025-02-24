@@ -9,12 +9,16 @@ library(patchwork)
 plan("multisession", workers = 25)
 
 # To Load te file for another downstreaming task
-path <- "/home/fenosoa/scratch/Maya_Project/pipeline_Region/out3/UMAP_xenium3.obj.RData"
+detwd("/home/fenosoa/scratch/Maya_Project/merge_data")
+path <- "/home/fenosoa/scratch/Maya_Project/merge_data/output_merge/xenium_merge.obj_merge.data_T.RData"
 temp_env <- new.env()
 print("xenium.obj :   Loading begin")
 load(path, envir = temp_env)
 
 xenium.obj <- temp_env$xenium_merge.obj
+
+print("# Make sure the SCT assay is set as the default")
+DefaultAssay(xenium.obj) <- "SCT"
 
 # SCTransform performs normalization and variance stabilization on the data.
 # It replaces the log-normalization step and can help mitigate the effects of technical noise.
