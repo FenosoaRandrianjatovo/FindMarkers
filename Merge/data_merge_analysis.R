@@ -9,7 +9,7 @@ library(patchwork)
 plan("multisession", workers = 25)
 
 #Set working Directory
-setwd("/home/fenosoa/scratch/Maya_Project/merge_data/")
+setwd("/home/fenosoa/scratch/Maya_Project/merge_data")
 options(future.globals.maxSize = 480 * 1024^3)  # Set the limit to 480 GB
 
 print("# To Load te file by creating a new enverimont")
