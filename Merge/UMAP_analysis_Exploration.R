@@ -31,4 +31,10 @@ plot4 <- DimPlot(xenium.obj)
 ggsave("UMAP_merge_Plot.png", plot = plot4, width = 20, height = 15, dpi = 300)
 
 plot1 <- DimPlot(xenium.obj, fov="fov.1")
-ggsave("UMAP_merge_Plot.png", plot = plot4, width = 20, height = 15, dpi = 300)
+ggsave("UMAP_merge_Plot_1.png", plot = plot1, width = 20, height = 15, dpi = 300)
+
+
+
+
+
+
