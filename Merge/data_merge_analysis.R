@@ -72,12 +72,12 @@ print("=========================================================================
 
 
 
-# plot4 <- DimPlot(xenium.obj)
-# ggsave("UMAP_merged_Plot.png", plot = plot4, width = 20, height = 15, dpi = 300)
+plot4 <- DimPlot(xenium.obj)
+ggsave("UMAP_merged_Plot.png", plot = plot4, width = 20, height = 15, dpi = 300)
 
 
-# plot_fov1 <- ImageDimPlot(xenium.obj, cols = "polychrome", size = 0.75, fov="fov")
-# ggsave("ImageDimPlot_fov1.png", plot = plot_fov1, width = 20, height = 15, dpi = 300)
+plot_fov1 <- ImageDimPlot(xenium.obj, cols = "polychrome", size = 0.75, fov="fov")
+ggsave("ImageDimPlot_fov1.png", plot = plot_fov1, width = 20, height = 15, dpi = 300)
 
 # ggsave("ImageDimPlot_VS_UMAP_R3.png", plot = plot2+ plot4, width = 30, height = 20, dpi = 300)
 
